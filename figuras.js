@@ -122,3 +122,23 @@ console.log(
 );
 
 console.groupEnd();
+
+
+
+// Aquí interactuamos con el HTML
+
+const calcularPerimetroCuadrado = function() {
+  const input = document.getElementById('inputCuadrado');
+  const value = input.value;
+  const perimetro = perimetroCuadrado(value);
+  alert(perimetro);
+  return perimetro;
+};
+
+const calcularAreaCuadrado = function() {
+  const input = document.getElementById('inputCuadrado');
+  const value = input.value;
+  const area = areaCuadrado(value);
+  alert(area);
+  return area;
+}
