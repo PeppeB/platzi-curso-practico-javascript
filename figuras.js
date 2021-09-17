@@ -129,16 +129,58 @@ console.groupEnd();
 
 const calcularPerimetroCuadrado = function() {
   const input = document.getElementById('inputCuadrado');
-  const value = input.value;
-  const perimetro = perimetroCuadrado(value);
-  alert(perimetro);
+  const lado = input.value;
+  //console.log(typeof(value));
+  const perimetro = perimetroCuadrado(lado);
+  alert(perimetro.toFixed(2) + "cm");
   return perimetro;
 };
 
 const calcularAreaCuadrado = function() {
   const input = document.getElementById('inputCuadrado');
-  const value = input.value;
-  const area = areaCuadrado(value);
-  alert(area);
+  const lado = input.value;
+  const area = areaCuadrado(lado);
+  alert(area.toFixed(2) + "cm²");
+  return area;
+}
+
+const calcularPerimetroTriangulo = function(){
+  const inputLado1 = document.getElementById('inputLadoTriangulo1');
+  const lado1 = Number(inputLado1.value);
+  //console.log(typeof(lado1));
+  const inputLado2 = document.getElementById('inputLadoTriangulo2');
+  const lado2 = Number(inputLado2.value);
+  const inputBase = document.getElementById('inputBaseTriangulo');
+  const base = Number(inputBase.value);
+  const perimetro = perimetroTriangulo(lado1, lado2, base);
+  alert(perimetro.toFixed(2) + "cm");
+  return perimetro;
+}
+
+const calcularAreaTriangulo = function(){
+  const inputBase = document.getElementById('inputBaseTriangulo');
+  const base = inputBase.value;
+  const inputAltura = document.getElementById('inputAlturaTriangulo');
+  const altura = inputAltura.value;
+  const area = areaTriangulo(base, altura);
+  alert(area.toFixed(2) + "cm²");
+  return area;
+}
+
+const calcularCircunferenciaCirculo = function() {
+  const input = document.getElementById('inputRadioCirculo');
+  const radio = input.value;
+  const diametro = diametroCirculo(radio);
+  const circunferencia = circunferenciaCirculo(radio);
+  alert('Diametro: '+diametro.toFixed(2) + "cm");
+  alert('Circunferencia: '+circunferencia.toFixed(2) + "cm");
+  return circunferencia;
+}
+
+const calcularAreaCirculo = function() {
+  const input = document.getElementById('inputRadioCirculo');
+  const radio = input.value;
+  const area = areaCirculo(radio);
+  alert('Area: '+area.toFixed(2) + "cm²");
   return area;
 }
