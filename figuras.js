@@ -123,64 +123,135 @@ console.log(
 
 console.groupEnd();
 
-
-
 // Aquí interactuamos con el HTML
 
-const calcularPerimetroCuadrado = function() {
-  const input = document.getElementById('inputCuadrado');
+/*
+const muestrarPerimetro = function(perimetro, figura) {
+  let p = null;
+  
+  switch(figura) {
+    case 'cuadrado':
+      p = document.getElementById('output-perimetro-cuadrado');
+      break;
+    case 'triangulo':
+      p = document.getElementById('output-perimetro-triangulo');
+      break;
+    case 'circulo':
+      p = document.getElementById('output-circunferencia-circulo');
+      break;
+  }
+  if(!p || p==null) {
+    p.innerHTML = 'No se pudrió calcular el perimetro';
+    return;
+  }
+  p.innerHTML = perimetro.toFixed(2) + 'cm';
+};
+*/
+
+const muestrarResutado = function (tipoCalculo, figura, valoreCalculo) {
+  let p = null;
+
+  switch (figura) {
+    case "cuadrado":
+      p =
+        tipoCalculo == "calculoPerimetro"?
+          document.getElementById("output-perimetro-cuadrado") :
+          document.getElementById("output-area-cuadrado");
+      break;
+    case "triangulo":
+      p =
+        tipoCalculo == "calculoPerimetro"?
+          document.getElementById("output-perimetro-triangulo") :
+          document.getElementById("output-area-triangulo");
+      break;
+    case "circulo":
+      if(tipoCalculo == 'calculoDiametro') {
+        p = document.getElementById("output-diametro-circulo");
+      }
+      if(tipoCalculo == 'calculoCircunferencia') {
+        p = document.getElementById("output-circunferencia-circulo");
+      }
+      if(tipoCalculo == 'calculoArea') {
+        p = document.getElementById("output-area-circulo");
+      }
+      break;
+  }
+  if (!p || p == null) {
+    p.innerHTML = "No se pudrió calcular el perimetro";
+    return;
+  }
+  let medida = '';
+  if(tipoCalculo == 'calculoPerimetro' || tipoCalculo == 'calculoCircunferencia' || tipoCalculo == 'calculoDiametro') {
+    medida = 'cm';
+  } else {
+    medida = 'cm²';
+  }
+  p.innerHTML = valoreCalculo.toFixed(2) + medida;
+};
+
+
+const calcularPerimetroCuadrado = function () {
+  console.log("ciao");
+  const input = document.getElementById("inputCuadrado");
   const lado = input.value;
   //console.log(typeof(value));
   const perimetro = perimetroCuadrado(lado);
-  alert(perimetro.toFixed(2) + "cm");
+  muestrarResutado('calculoPerimetro', 'cuadrado', perimetro);
+  //alert(perimetro.toFixed(2) + "cm");
   return perimetro;
 };
 
-const calcularAreaCuadrado = function() {
-  const input = document.getElementById('inputCuadrado');
+const calcularAreaCuadrado = function () {
+  const input = document.getElementById("inputCuadrado");
   const lado = input.value;
   const area = areaCuadrado(lado);
-  alert(area.toFixed(2) + "cm²");
+  muestrarResutado('calculoArea', 'cuadrado', area);
+  //alert(area.toFixed(2) + "cm²");
   return area;
-}
+};
 
-const calcularPerimetroTriangulo = function(){
-  const inputLado1 = document.getElementById('inputLadoTriangulo1');
+const calcularPerimetroTriangulo = function () {
+  const inputLado1 = document.getElementById("inputLadoTriangulo1");
   const lado1 = Number(inputLado1.value);
   //console.log(typeof(lado1));
-  const inputLado2 = document.getElementById('inputLadoTriangulo2');
+  const inputLado2 = document.getElementById("inputLadoTriangulo2");
   const lado2 = Number(inputLado2.value);
-  const inputBase = document.getElementById('inputBaseTriangulo');
+  const inputBase = document.getElementById("inputBaseTriangulo");
   const base = Number(inputBase.value);
   const perimetro = perimetroTriangulo(lado1, lado2, base);
-  alert(perimetro.toFixed(2) + "cm");
+  muestrarResutado('calculoPerimetro', "triangulo", perimetro);
+  //alert(perimetro.toFixed(2) + "cm");
   return perimetro;
-}
+};
 
-const calcularAreaTriangulo = function(){
-  const inputBase = document.getElementById('inputBaseTriangulo');
+const calcularAreaTriangulo = function () {
+  const inputBase = document.getElementById("inputBaseTriangulo");
   const base = inputBase.value;
-  const inputAltura = document.getElementById('inputAlturaTriangulo');
+  const inputAltura = document.getElementById("inputAlturaTriangulo");
   const altura = inputAltura.value;
   const area = areaTriangulo(base, altura);
-  alert(area.toFixed(2) + "cm²");
+  muestrarResutado('calculoArea', "triangulo", area);
+  //alert(area.toFixed(2) + "cm²");
   return area;
-}
+};
 
-const calcularCircunferenciaCirculo = function() {
-  const input = document.getElementById('inputRadioCirculo');
+const calcularCircunferenciaCirculo = function () {
+  const input = document.getElementById("inputRadioCirculo");
   const radio = input.value;
   const diametro = diametroCirculo(radio);
   const circunferencia = circunferenciaCirculo(radio);
-  alert('Diametro: '+diametro.toFixed(2) + "cm");
-  alert('Circunferencia: '+circunferencia.toFixed(2) + "cm");
+  muestrarResutado('calculoDiametro', "circulo", diametro);
+  //alert("Diametro: " + diametro.toFixed(2) + "cm");
+  muestrarResutado('calculoCircunferencia', "circulo", circunferencia);
+  //alert('Circunferencia: '+circunferencia.toFixed(2) + "cm");
   return circunferencia;
-}
+};
 
-const calcularAreaCirculo = function() {
-  const input = document.getElementById('inputRadioCirculo');
+const calcularAreaCirculo = function () {
+  const input = document.getElementById("inputRadioCirculo");
   const radio = input.value;
   const area = areaCirculo(radio);
-  alert('Area: '+area.toFixed(2) + "cm²");
+  muestrarResutado('calculoArea', "circulo", area);
+  //alert("Area: " + area.toFixed(2) + "cm²");
   return area;
-}
+};

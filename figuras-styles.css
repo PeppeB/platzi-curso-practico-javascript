@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+  
+  main {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    content: '\f1e3';
+  }
+  
+  header {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  header h1,
+  header p {
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  .figuras {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  article {
+    border: 2px solid rgba(255, 239, 120, 0.8);
+    margin-bottom: 20px;
+  }
+  
+  .figuras-circulo {
+    margin-bottom: 0;
+  }
+  
+  .figuras h2 {
+    background-color: gray;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  .data-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .figuras-data-input,
+  .figuras-data-output {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 5px;
+  }
+  
+  .figuras-data-input label,
+  .figuras-data-output label {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /*
+  .figuras-data-output label {
+      display: block;
+  }
+  */
+  
+  .figuras-data-input input,
+  .figuras-data-output p {
+    width: 70%;
+    margin: 5px auto 0;
+    background-color: rgba(255, 239, 120, 0.8);
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .figuras-data-input input {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+  
+  .figuras-data-output p {
+      height: 19.33px;
+      font-size: 1.33rem;
+      border: 2px solid rgb(0,0,0);
+    }
+  
+  .figuras-data-input input:active {
+    background-color: aqua;
+  }
+  
+  .figuras-data-submit {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    justify-content: space-between;
+  }
+  
+  .figuras-data-submit button {
+    width: 70%;
+    margin: 0 auto 5px;
+    background-color: rgba(191, 191, 191, 0.5);
+  }
+  
+  .data-submit--textvalue {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1rem;
+  }  
