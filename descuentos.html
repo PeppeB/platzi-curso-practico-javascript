@@ -8,12 +8,14 @@
       Porcentajes y descuentos | Curso Practico de JavaScript en Platzi
     </title>
     <link rel="stylesheet" href="./descuentos.css">
+    <link rel="stylesheet" href="./descuentos-tablet.css"
+    media="screen and (min-width: 576px)">
   </head>
   <body>
     <main>
       <header>
         <h1>Porcentajes y descuentos</h1>
-        <p>Este es el segundo taller del curso practico de JavaScript</p>
+        <p>Segundo taller del curso practico de JavaScript</p>
       </header>
       <section>
         <h2>Calcula el precio a pagar de tus productos con descuento</h2>
@@ -21,14 +23,16 @@
         <form class="data-form" action="">
           <div class="data-input">
             <label for="inputPrice">Escribe el precio de tu producto:</label>
-            <input id="inputPrice" type="number" />
+            <div class="input-price">
+              <input id="inputPrice" type="number" />
+            </div>
           </div>
 
           <div class="data-input">
-            <label for="inputDiscount"
-              >Escribe el descuento de tu producto:</label
-            >
-            <input id="inputDiscount" type="number" />
+            <label for="inputDiscount">Escribe el descuento de tu producto:</label>
+            <div class="input-discount">
+              <input id="inputDiscount" type="number" />
+            </div>
           </div>
 
           <!-- Per evitare che il nostro bottone ricarichi la pagina e cancella quello che l'utente ha scritto nel nostro input, diamo l'attributo type="button" al bottone -->
