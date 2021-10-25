@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Percentages and Discounts | A challenge of the JavaScript Practical Course in Platzi
+    </title>
+    <link rel="stylesheet" href="./discount-coupons.css">
+    <link rel="stylesheet" href="./discount-coupons-tablet.css"
+    media="screen and (min-width: 576px)">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Percentages and discount coupones</h1>
+        <!-- <p>JavaScript challenge</p> -->
+      </header>
+      <section>
+        <h2>Calculate the price to pay of your discounted products</h2>
+
+        <form class="data-form" action="">
+          <div class="data-input">
+            <label for="inputPrice">Write your product's price:</label>
+            <div class="input-price">
+              <input id="inputPrice" type="number" />
+            </div>
+          </div>
+
+          <div class="data-input">
+            <label for="inputCoupon">Select a discount coupon from the list below:</label>
+            <select class="input-coupon" id="inputCoupon" onchange="viewDicountCouponValue()">
+              <option value="noCoupon">Select a coupon</option>
+              <option value="coupon1">dicount coupon 1</option>
+              <option value="coupon2">dicount coupon 2</option>
+              <option value="coupon3">dicount coupon 3</option>
+              <option value="coupon4">dicount coupon 4</option>
+            </select>            
+          </div>
+
+          <!-- Per evitare che il nostro bottone ricarichi la pagina e cancella quello che
+            l'utente ha scritto nel nostro input, diamo l'attributo type="button" al bottone -->
+          <button type="button" id="btnDiscountCouponPrice" onclick="onClickButtonDiscountCouponPrice()">
+            Calculate the discount price
+          </button>
+          <p id="discountApplied"></p>
+          <p id="result"></p>
+        </form>
+      </section>
+    </main>
+    <script src="./discount-coupons.js"></script>
+  </body>
+</html>
