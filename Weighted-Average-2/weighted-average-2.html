@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weighted average</title>
+  </head>
+  <body>
+    <header>
+      <h1>Weighted average</h1>
+    </header>
+    <section>
+      <form class="data-form" action="" id="inputDataForm">
+        <div class="data-input">
+          <label for="inputCourse">Course</label>
+          <input id="inputCourse" type="text" required />
+        </div>
+        <div class="data-input">
+          <label for="inputNote">Note</label>
+          <input id="inputNote" type="number" required />
+        </div>
+        <div class="data-input">
+          <label for="inputCredit">Credit</label>
+          <input id="inputCredit" type="number" required />
+        </div>
+        <button id="btnAddData" type="button" onclick="sendData()">Add</button>
+        <button id="btnWAverage" type="button" onclick="calculatewWeightedAverage()" disabled>
+          Calculate weighted average
+        </button>
+        <div class="data-output">
+          <p id="result"></p>
+        </div>
+      </form>
+    </section>
+    <script src="./weighted-average-2.js"></script>
+  </body>
+</html>
